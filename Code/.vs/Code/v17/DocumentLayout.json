@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Working\\GitHub\\ITI_GraduationProject\\Code\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1A39FD44-2B59-4879-A805-FD1347B87AAD}|Code.csproj|d:\\working\\github\\iti_graduationproject\\code\\code.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{1A39FD44-2B59-4879-A805-FD1347B87AAD}|Code.csproj|solutionrelative:code.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1A39FD44-2B59-4879-A805-FD1347B87AAD}|Code.csproj|d:\\working\\github\\iti_graduationproject\\code\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1A39FD44-2B59-4879-A805-FD1347B87AAD}|Code.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
@@ -55,12 +59,24 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Code",
+              "DocumentMoniker": "D:\\Working\\GitHub\\ITI_GraduationProject\\Code\\Code.csproj",
+              "RelativeDocumentMoniker": "Code.csproj",
+              "ToolTip": "D:\\Working\\GitHub\\ITI_GraduationProject\\Code\\Code.csproj",
+              "RelativeToolTip": "Code.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-02T12:21:03.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Working\\GitHub\\ITI_GraduationProject\\Code\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\Working\\GitHub\\ITI_GraduationProject\\Code\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAALsAAAAAAAAAAAAAALIAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAALIAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-09-02T12:12:44.827Z",
               "EditorCaption": ""
