@@ -1,79 +1,133 @@
 ﻿@model ITI_Hackathon.Models.Account.LoginViewModel
 @{
     ViewData["Title"] = "Login";
-    Layout = null; // remove layout if this is a standalone login page
+    Layout = null; // No layout for auth page
 }
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <title>Login | Mediux</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@ViewData["Title"] - Mediux</title>
-    <link rel="shortcut icon" type="image/png" href="/assets/images/logos/favicon.png" />
-    <link rel="stylesheet" href="/assets/css/styles.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="icon" href="~/assets/images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="~/assets/fonts/tabler-icons.min.css">
+    <link rel="stylesheet" href="~/assets/fonts/feather.css">
+    <link rel="stylesheet" href="~/assets/fonts/fontawesome.css">
+    <link rel="stylesheet" href="~/assets/fonts/material.css">
+    <link rel="stylesheet" href="~/assets/css/style.css" id="main-style-link">
+    <link rel="stylesheet" href="~/assets/css/style-preset.css">
 </head>
 
 <body>
-    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-         data-sidebar-position="fixed" data-header-position="fixed">
-
-        <div class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
-            <div class="d-flex align-items-center justify-content-center w-100">
-                <div class="row justify-content-center w-100">
-                    <div class="col-md-8 col-lg-6 col-xxl-3">
-                        <div class="card mb-0">
-                            <div class="card-body">
-                                <a href="~/" class="text-nowrap logo-img text-center d-block py-3 w-100">
-                                    <img src="~/assets/images/logos/dark-logo.svg" width="180" alt="">
-                                </a>
-                                <p class="text-center">Welcome back, please login</p>
-
-                                <!-- Razor form here -->
-                                <form asp-action="Login" method="post">
-                                    <div asp-validation-summary="All" class="text-danger mb-3"></div>
-
-                                    <div class="mb-3">
-                                        <label asp-for="Email" class="form-label"></label>
-                                        <input asp-for="Email" class="form-control" />
-                                        <span asp-validation-for="Email" class="text-danger"></span>
-                                    </div>
-
-                                    <div class="mb-4">
-                                        <label asp-for="Password" class="form-label"></label>
-                                        <input asp-for="Password" class="form-control" type="password" />
-                                        <span asp-validation-for="Password" class="text-danger"></span>
-                                    </div>
-
-                                    <div class="d-flex align-items-center justify-content-between mb-4">
-                                        <div class="form-check">
-                                            <input asp-for="RememberMe" class="form-check-input" />
-                                            <label asp-for="RememberMe" class="form-check-label text-dark"></label>
-                                        </div>
-                                        <a class="text-primary fw-bold" asp-action="ForgotPassword">Forgot Password ?</a>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-primary w-100 py-2 fs-5 mb-4 rounded-2">Sign In</button>
-
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <p class="fs-6 mb-0 fw-bold">New here?</p>
-                                        <a class="text-primary fw-bold ms-2" asp-controller="Account" asp-action="Register">Create an account</a>
-                                    </div>
-                                </form>
-                                <!-- End Razor form -->
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
         </div>
-
     </div>
 
-    <script src="~/assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="~/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="auth-main">
+        <div class="auth-wrapper v3">
+            <div class="auth-form">
+                <div class="auth-header">
+                    <a href="~/"><img src="~/assets/images/logo-dark.svg" alt="logo"></a>
+                </div>
+                <div class="card my-5">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-end mb-4">
+                            <h3 class="mb-0"><b>Login</b></h3>
+                            <a asp-controller="Account" asp-action="Register" class="link-primary">Don't have an account?</a>
+                        </div>
+
+                        <!-- Razor form -->
+                        <form asp-action="Login" method="post">
+                            <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Email" class="form-label"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Password" class="form-label"></label>
+                                <input asp-for="Password" class="form-control" type="password" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+
+                            <div class="d-flex mt-1 justify-content-between">
+                                <div class="form-check">
+                                    <input asp-for="RememberMe" class="form-check-input" />
+                                    <label asp-for="RememberMe" class="form-check-label text-dark"></label>
+                                </div>
+                                <a asp-action="ForgotPassword" class="text-secondary f-w-400">Forgot Password?</a>
+                            </div>
+
+                            <div class="d-grid mt-4">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                        <!-- End Razor form -->
+
+                        <div class="saprator mt-3">
+                            <span>Login with</span>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="d-grid">
+                                    <button type="button" class="btn mt-2 btn-light-primary bg-light text-muted">
+                                        <img src="~/assets/images/authentication/google.svg" alt="Google">
+                                        <span class="d-none d-sm-inline-block"> Google</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="d-grid">
+                                    <button type="button" class="btn mt-2 btn-light-primary bg-light text-muted">
+                                        <img src="~/assets/images/authentication/twitter.svg" alt="Twitter">
+                                        <span class="d-none d-sm-inline-block"> Twitter</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="d-grid">
+                                    <button type="button" class="btn mt-2 btn-light-primary bg-light text-muted">
+                                        <img src="~/assets/images/authentication/facebook.svg" alt="Facebook">
+                                        <span class="d-none d-sm-inline-block"> Facebook</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="auth-footer row">
+                    <div class="col my-1">
+                        <p class="m-0">Copyright © <a href="#">Basem</a></p>
+                    </div>
+                    <div class="col-auto my-1">
+                        <ul class="list-inline footer-link mb-0">
+                            <li class="list-inline-item"><a href="~/">Home</a></li>
+                            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                            <li class="list-inline-item"><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="~/assets/js/plugins/popper.min.js"></script>
+    <script src="~/assets/js/plugins/simplebar.min.js"></script>
+    <script src="~/assets/js/plugins/bootstrap.min.js"></script>
+    <script src="~/assets/js/fonts/custom-font.js"></script>
+    <script src="~/assets/js/pcoded.js"></script>
+    <script src="~/assets/js/plugins/feather.min.js"></script>
     <partial name="_ValidationScriptsPartial" />
 </body>
 </html>
