@@ -1,0 +1,79 @@
+﻿@model ITI_Hackathon.Models.Account.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = null; // remove layout if this is a standalone login page
+}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] - Mediux</title>
+    <link rel="shortcut icon" type="image/png" href="/assets/images/logos/favicon.png" />
+    <link rel="stylesheet" href="/assets/css/styles.min.css" />
+</head>
+
+<body>
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+         data-sidebar-position="fixed" data-header-position="fixed">
+
+        <div class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+            <div class="d-flex align-items-center justify-content-center w-100">
+                <div class="row justify-content-center w-100">
+                    <div class="col-md-8 col-lg-6 col-xxl-3">
+                        <div class="card mb-0">
+                            <div class="card-body">
+                                <a href="~/" class="text-nowrap logo-img text-center d-block py-3 w-100">
+                                    <img src="~/assets/images/logos/dark-logo.svg" width="180" alt="">
+                                </a>
+                                <p class="text-center">Welcome back, please login</p>
+
+                                <!-- Razor form here -->
+                                <form asp-action="Login" method="post">
+                                    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                                    <div class="mb-3">
+                                        <label asp-for="Email" class="form-label"></label>
+                                        <input asp-for="Email" class="form-control" />
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label asp-for="Password" class="form-label"></label>
+                                        <input asp-for="Password" class="form-control" type="password" />
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="d-flex align-items-center justify-content-between mb-4">
+                                        <div class="form-check">
+                                            <input asp-for="RememberMe" class="form-check-input" />
+                                            <label asp-for="RememberMe" class="form-check-label text-dark"></label>
+                                        </div>
+                                        <a class="text-primary fw-bold" asp-action="ForgotPassword">Forgot Password ?</a>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary w-100 py-2 fs-5 mb-4 rounded-2">Sign In</button>
+
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <p class="fs-6 mb-0 fw-bold">New here?</p>
+                                        <a class="text-primary fw-bold ms-2" asp-controller="Account" asp-action="Register">Create an account</a>
+                                    </div>
+                                </form>
+                                <!-- End Razor form -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="~/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="~/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+</body>
+</html>
